@@ -1,0 +1,316 @@
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.hero {
+  height: 100vh;         
+  min-height: 100vh;
+  width: 100%;
+  background-image: url('../images/picture2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #ffffff; 
+  display: flex;
+  flex-direction: column;      
+  align-items: center;
+
+  justify-content: flex-start;
+
+  padding-top: clamp(5vh, 8vh, 84px);
+
+  gap: 0.85rem;                
+  position: relative;
+  color: #e61e25;
+  overflow: hidden;      
+  box-sizing: border-box;
+}
+
+
+.hero-step {
+  margin: 0;
+  color: #e61e25;
+  display: inline-block;                        
+  background: rgba(255,255,255,0.95);           
+  padding: clamp(6px, 0.6vw, 10px) clamp(10px, 1.6vw, 18px);
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  font-family: "cc-overbyte-on", sans-serif;
+  font-weight: 700;
+  font-size: 30pt;                              
+  line-height: 1;
+  text-align: center;
+  -webkit-text-stroke: 0.2px rgba(0,0,0,0.45);
+  text-shadow: 0 0.6px 0 rgba(255,255,255,0.85), 0 1.5px 3px rgba(0,0,0,0.12);
+}
+
+.hero-inner {
+  margin-top: clamp(1rem, 5vh, 56px);   
+  width: min(72vw, 900px);             
+  aspect-ratio: 5 / 3;           
+  max-height: calc(82vh);              
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;                     
+  margin: 0;
+  background: rgba(255,255,255,0.96); 
+  border-radius: 20px;                 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  box-sizing: border-box;
+}
+
+.hero-title,
+.hero p {
+  margin: 0;
+  line-height: 1;
+  background: transparent !important; 
+  padding: 0;                          
+}
+
+
+.hero-title {
+  color: #e61e25;
+  font-size: 60pt;
+  -webkit-text-stroke: 0.35px rgba(0,0,0,0.6);
+  text-shadow: 0 0.8px 0 rgba(255,255,255,0.85), 0 2px 4px rgba(0,0,0,0.18);
+  transition: transform 180ms cubic-bezier(.2,.8,.2,1);
+}
+
+
+.hero p {
+  color: #e61e25;
+  font-weight: 600;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  margin-top: 0.6rem;
+  text-shadow: 0 0.8px 0 rgba(255,255,255,0.7), 0 3px 8px rgba(0,0,0,0.12);
+}
+
+
+.hero-title:hover,
+.hero-title:focus-visible {
+  transform: scale(1.06);
+}
+
+
+@media (max-width: 720px) {
+  .hero-inner {
+    width: min(90vw, 720px);
+    aspect-ratio: 5 / 3;
+    border-radius: 16px;
+    padding: 0.9rem;
+  }
+  .hero-title { font-size: 32pt; }
+  .hero-step {
+    font-size: 20pt;
+    padding: 0.35rem 0.6rem;
+    border-radius: 10px;
+  }
+}
+
+
+.hero-inner,
+.hero-title,
+.hero p,
+.hero-step {
+  font-family: "cc-overbyte-on", sans-serif;
+  font-weight: 400;
+}
+
+
+   
+.hero-inner p,
+.summary-note {
+  font-family: "Silom", "cc-overbyte-on", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 1.25vw, 16px);
+  line-height: 1.45;
+}
+
+
+.hero .build,
+.hero .superhero,
+.hero .character,
+.hero .center-figure,
+.hero .clickable,
+#build,
+#superhero {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+
+.side-options {
+  position: absolute;
+  left: calc(50% - min(36vw, 450px) - clamp(12px, 4vw, 48px) - 1in);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  z-index: 9999;        
+  pointer-events: auto; 
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.side-options li {
+  margin: 0;
+  padding: 0;
+  pointer-events: none; 
+}
+
+
+.side-option {
+  pointer-events: auto;
+  position: relative;
+  z-index: 10000;
+  background: rgba(255,255,255,0.96);
+  color: #e61e25;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+  font-family: "cc-overbyte-on", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 150ms cubic-bezier(.2,.8,.2,1), box-shadow 150ms;
+  min-width: 110px;
+  text-align: center;
+  font-size: 16px;
+}
+.side-option:focus { outline: 2px solid rgba(230,30,37,0.18); }
+
+
+.side-option:hover,
+.side-option:focus {
+  transform: translateY(-3px) scale(1.025);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.16);
+}
+.side-option.active {
+  background: #e61e25;
+  color: #fff;
+  box-shadow: 0 14px 36px rgba(230,30,37,0.18);
+}
+
+
+@media (max-width: 720px) {
+  .side-options { left: 10px; gap: 0.45rem; }
+  .side-option { padding: 0.6rem 0.9rem; font-size: 15px; min-width: 88px; }
+}
+
+
+.editor-panel {
+  position: absolute;
+  left: calc(50% + min(36vw, 450px) + clamp(12px, 4vw, 48px)); 
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  max-width: 32vw;
+  background: rgba(255,255,255,0.98);
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  padding: 0.6rem;
+  z-index: 35;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+
+.editor-header {
+  font-family: "cc-overbyte-on", sans-serif;
+  font-weight: 700;
+  color: #e61e25;
+  font-size: 0.95rem;
+  padding-left: 2px;
+}
+
+
+#editor-notes {
+  width: 100%;
+  min-height: 200px;
+  resize: vertical;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.08);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-size: 14px;
+  line-height: 1.4;
+  background: #fff;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.02);
+  box-sizing: border-box;
+}
+
+
+.editor-help {
+  font-size: 12px;
+  color: rgba(0,0,0,0.5);
+  padding-left: 2px;
+}
+
+
+@media (max-width: 920px) {
+  .editor-panel {
+    position: static;
+    transform: none;
+    width: 90%;
+    max-width: 720px;
+    margin: 0.8rem auto 0;
+  }
+}
+
+
+@media (max-width: 720px) {
+  .editor-panel { width: 94%; }
+}
+
+
+.summary-panel {
+  margin-top: clamp(1rem, 5vh, 56px);
+  width: min(72vw, 900px);
+  aspect-ratio: 5 / 3;
+  max-height: calc(82vh);
+  padding: 1.25rem;
+  margin: 0;
+  background: transparent;      
+  border-radius: 0;            
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #111;                  
+  display: none;                
+  overflow: auto;
+}
+
+.summary-section { margin-bottom: 1rem; }
+.summary-label {
+  font-family: "cc-overbyte-on", sans-serif;
+  color: #e61e25;
+  margin: 0 0 0.35rem 0;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.summary-note {
+  margin: 0;
+  white-space: pre-wrap; 
+  line-height: 1.4;
+  color: rgba(0,0,0,0.85);
+}
+
+
+@media (max-width: 920px) {
+  .summary-panel {
+    width: 90%;
+    max-width: 720px;
+    padding: 0.9rem;
+  }
+}

@@ -1,21 +1,302 @@
-/* styles.css */
-
-/* Global variables */
 
 :root {
-    
+    --page-bg: #ffffff;
+    --hero-text: #e61e25;
+    --hero-overlay: rgba(255,255,255,0.95);
+    --font-sans: "cc-deadline-open-variable", sans-serif;
 }
 
-/* Main styles */
 
 body {
-
+    background: #ffffff; 
 }
 
-h1 {
-
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
-p {
+.hero {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url('/images/picture1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #ffffff; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #e61e25;
+  overflow: visible;
+}
 
+.hero::before {
+  display: none;
+  content: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 1.25rem;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0; 
+}
+
+.hero-title {
+  display: inline-block;
+  padding: 0.28em 0.65em;
+  background: rgba(255,255,255,0.95);
+  border-radius: 10px;
+  color: #e61e25;
+  font-size: 60pt;
+  -webkit-text-stroke: 0.35px rgba(0,0,0,0.6);
+  text-shadow: 0 0.8px 0 rgba(255,255,255,0.85), 0 2px 4px rgba(0,0,0,0.18);
+  transition: transform 180ms cubic-bezier(.2,.8,.2,1);
+}
+
+.hero-title:hover,
+.hero-title:focus-visible {
+  transform: scale(1.06);
+}
+
+.hero p {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.18em 0.5em;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.92);
+  color: #e61e25;
+  font-weight: 600;
+  text-shadow:
+    0 0.8px 0 rgba(255,255,255,0.7),
+    0 3px 8px rgba(0,0,0,0.18);
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+}
+
+@media (max-width: 420px) {
+  .hero-inner { padding: 1rem 1.1rem; }
+  .hero-title { padding: 0.4rem 0.7rem; font-size: 32pt; -webkit-text-stroke: 0.25px rgba(0,0,0,0.6); }
+}
+
+@font-face {
+    font-family: 'CCDeadlineOpenExtendedDoom';
+    src: url('../fonts/CCDeadlineOpenExtendedDoom.woff2') format('woff2'),
+         url('../fonts/CCDeadlineOpenExtendedDoom.woff') format('woff'),
+         url('../fonts/CCDeadlineOpenExtendedDoom.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+.hero-inner,
+.hero h1,
+.hero p {
+  font-family: "cc-deadline-open-variable", sans-serif;
+  font-variation-settings: 'wdth' 150, 'slnt' 100;
+  -webkit-font-variation-settings: 'wdth' 150, 'slnt' 100;
+  color: #fc020a; 
+}
+
+.hero h1 {
+    letter-spacing: 0.02em;
+    text-transform: none;
+    margin-bottom: 0.25rem;
+}
+.hero p {
+    opacity: 0.95;
+}
+
+
+.hero::before {
+  display: none;
+  content: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 1.25rem;
+  background: transparent;
+  backdrop-filter: none;
+  border-radius: 12px;
+  box-shadow: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hero-title {
+  position: relative;
+  display: inline-block;
+  z-index: 3;
+  padding: 0.5rem 0.9rem;
+  line-height: 1;
+  color: #e61e25;
+  font-size: 60pt;
+  text-shadow: none;
+  -webkit-text-stroke: 0;
+  box-shadow: none;
+  transform: none;
+}
+
+.hero-title::before {
+  display: none;
+  content: none;
+}
+
+.hero p {
+  position: relative;
+  z-index: 3;
+  margin-top: 0.5rem;
+  color: #e61e25;
+  font-weight: 600;
+  text-shadow: none;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  opacity: 1;
+}
+
+@media (max-width: 420px) {
+  .hero-inner { padding: 1rem 1.1rem; }
+  .hero-title { padding: 0.4rem 0.7rem; font-size: 32pt; }
+}
+
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 1.25rem;
+  background: transparent;
+  backdrop-filter: none;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hero-title {
+  position: relative;
+  display: inline-block;
+  z-index: 3;
+  padding: 0.5rem 0.9rem;
+  line-height: 1;
+  color: #e61e25;
+  font-size: 60pt;
+
+  text-shadow:
+    0 0.8px 0 rgba(255,255,255,0.85),   
+    0 2px 4px rgba(0,0,0,0.28),         
+    0 6px 12px rgba(0,0,0,0.20);        
+  -webkit-text-stroke: 0.35px rgba(0,0,0,0.6); 
+  transform: none;
+}
+
+.hero-title::before {
+  display: none;
+  content: none;
+}
+
+.hero p {
+  position: relative;
+  z-index: 3;
+  margin-top: 0.5rem;
+  color: #e61e25;
+  font-weight: 600;
+  text-shadow:
+    0 0.8px 0 rgba(255,255,255,0.7),   
+    0 3px 8px rgba(0,0,0,0.18);        
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  opacity: 1;
+}
+
+@media (max-width: 420px) {
+  .hero-inner { padding: 1rem 1.1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+  .hero-title { padding: 0.4rem 0.7rem; font-size: 32pt; -webkit-text-stroke: 0.25px rgba(0,0,0,0.6); }
+}
+
+.hero-title {
+  transition: transform 180ms cubic-bezier(.2,.8,.2,1), box-shadow 180ms ease;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.hero-title:hover,
+.hero-title:focus-visible {
+  transform: scale(1.06); 
+}
+
+.hero-title:active {
+  transform: scale(0.995);
+}
+
+.hero-title a,
+.hero-title-link {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block; 
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hero-title a:focus-visible,
+.hero-title-link:focus-visible {
+  outline: 3px solid rgba(230,30,37,0.18);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+.hero-title a:hover,
+.hero-title a:focus {
+  transform: none;
+}
+
+.hero-inner,
+.hero-title,
+.hero-title a,
+.hero-title *,
+.hero-title::before,
+.hero-title::after,
+.hero p,
+.hero p::before,
+.hero p::after {
+  text-shadow: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  -webkit-text-stroke: 0 !important;
+  outline: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.hero-title::before,
+.hero-title::after,
+.hero p::before,
+.hero p::after {
+  display: none !important;
+  content: none !important;
+}
+
+.hero-inner {
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+.hero-title {
+  will-change: transform;
+  transition: transform 180ms cubic-bezier(.2,.8,.2,1) !important;
+}
+
+.hero-title:hover,
+.hero-title:focus-visible {
+  transform: scale(1.06) !important;
+}
+
+.hero-title:active {
+  transform: scale(0.995) !important;
 }
